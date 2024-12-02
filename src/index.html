@@ -2,74 +2,191 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Daniel Macri - Property Management</title>
+  <title>Daniel Macri - Property Management Services</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Link to your CSS file if you have one -->
-  <!-- <link rel="stylesheet" href="styles.css"> -->
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+  <!-- Inline CSS Styles -->
   <style>
-    /* CSS Styles */
+    /* CSS Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
 
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f8f8f8;
+      font-family: 'Montserrat', sans-serif;
       color: #333;
+      background-color: #f8f8f8;
     }
 
-    /* Header */
-    header {
-      background-color: #d1a579;
-      color: #fff;
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 48px;
-    }
-
-    header p {
-      font-size: 24px;
-      margin-top: 10px;
-    }
-
-    /* Navigation */
+    /* Navigation Bar */
     nav {
-      background-color: rgba(96, 122, 72, 0.9); /* Light green with transparency */
-      overflow: hidden;
+      width: 100%;
+      background-color: rgba(96, 122, 72, 0.9);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
     }
 
-    nav a {
-      float: left;
+    nav ul {
+      display: flex;
+      list-style: none;
+      justify-content: center;
+    }
+
+    nav ul li {
+      margin: 0 20px;
+    }
+
+    nav ul li a {
       display: block;
       color: #fff;
-      text-align: center;
-      padding: 14px 20px;
       text-decoration: none;
+      padding: 20px 0;
       font-size: 18px;
+      transition: color 0.3s;
     }
 
-    nav a:hover {
+    nav ul li a:hover {
+      color: #d1a579;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      background: url('images/hero-image.jpg') center center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      position: relative;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 0 20px;
+    }
+
+    .hero h1 {
+      font-size: 60px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 24px;
+      margin-bottom: 40px;
+      line-height: 1.5;
+    }
+
+    .hero .btn {
       background-color: #d1a579;
       color: #fff;
+      padding: 15px 30px;
+      font-size: 18px;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
     }
 
-    /* Main Content */
-    .content {
-      padding: 40px 20px;
-      max-width: 800px;
+    .hero .btn:hover {
+      background-color: #b89260;
+    }
+
+    /* Section Styles */
+    section {
+      padding: 80px 20px;
+      max-width: 1200px;
       margin: 0 auto;
     }
 
-    .content h2 {
-      font-size: 32px;
+    section h2 {
+      font-size: 36px;
       color: #607a48;
+      margin-bottom: 40px;
+      text-align: center;
     }
 
-    .content p {
+    section p {
       font-size: 18px;
       line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    /* Portfolio Section */
+    .portfolio {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    .portfolio-item {
+      width: 30%;
+      margin-bottom: 30px;
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      border-radius: 5px;
+    }
+
+    .portfolio-item h3 {
+      margin-top: 15px;
+      font-size: 24px;
+      color: #333;
+    }
+
+    /* Contact Form */
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .contact-form label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form select {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .contact-form button {
+      background-color: #607a48;
+      color: #fff;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    .contact-form button:hover {
+      background-color: #4e6139;
     }
 
     /* Footer */
@@ -78,71 +195,181 @@
       color: #fff;
       text-align: center;
       padding: 20px;
-      position: relative;
     }
 
     footer p {
       margin: 5px;
     }
 
+    footer a {
+      color: #fff;
+      text-decoration: none;
+    }
+
     /* Responsive Design */
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 36px;
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 48px;
       }
 
-      header p {
+      .hero p {
         font-size: 20px;
       }
 
-      nav a {
-        float: none;
+      nav ul {
+        flex-direction: column;
+        background-color: rgba(96, 122, 72, 0.9);
+        position: absolute;
+        top: 60px;
+        left: 0;
         width: 100%;
-        text-align: left;
-        padding-left: 20px;
+        display: none;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      nav ul li {
+        margin: 0;
+      }
+
+      nav ul li a {
+        padding: 15px 0;
+      }
+
+      .menu-toggle {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        cursor: pointer;
+        color: #fff;
+        font-size: 24px;
+        display: block;
+      }
+
+      .portfolio-item {
+        width: 100%;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <h1>Daniel Macri</h1>
-    <p>Property Management Services in Koh Phangan</p>
-  </header>
-
   <!-- Navigation -->
   <nav>
-    <a href="index.html">Home</a>
-    <a href="technical.html">Our Systems</a>
-    <a href="contact.html">Contact</a>
-    <a href="booking.html">Booking</a>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <ul id="nav-menu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#systems">Our Systems</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
   </nav>
 
-  <!-- Main Content -->
-  <div class="content">
-    <h2>Welcome!</h2>
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Welcome to Daniel Macri Property Management</h1>
+      <p>Your trusted partner for property management services in Koh Phangan</p>
+      <a href="#contact" class="btn">Get in Touch</a>
+    </div>
+  </section>
+
+  <!-- About/Technical Section -->
+  <section id="systems">
+    <h2>Our Systems</h2>
     <p>
-      If you're here, chances are you're looking for someone trustworthy to manage your property on Koh Phangan—whether that means taking care of it while you're away, assisting with rentals, or handling the day-to-day tasks of property ownership. That's where I come in.
+      At Daniel Macri Property Management, we leverage cutting-edge technology and innovative systems to provide the best service to our clients. Below are some of the systems we've developed to streamline property management processes and enhance the experience for property owners and tenants alike.
+    </p>
+    <!-- Add more details about your systems here -->
+    <p>
+      <!-- Example System -->
+      <strong>Smart Home Integration:</strong> Utilizing my background in IT engineering, we implement smart home systems that allow for remote monitoring and control of your property.
+    </p>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio">
+    <h2>Our Portfolio</h2>
+    <div class="portfolio">
+      <!-- Portfolio Item 1 -->
+      <div class="portfolio-item">
+        <img src="images/property1.jpg" alt="Property 1">
+        <h3>Luxury Villa by the Sea</h3>
+      </div>
+      <!-- Portfolio Item 2 -->
+      <div class="portfolio-item">
+        <img src="images/property2.jpg" alt="Property 2">
+        <h3>Modern Apartment in the City</h3>
+      </div>
+      <!-- Portfolio Item 3 -->
+      <div class="portfolio-item">
+        <img src="images/property3.jpg" alt="Property 3">
+        <h3>Cozy Cottage in the Hills</h3>
+      </div>
+      <!-- Add more portfolio items as needed -->
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>
+      Whether you have questions about my services, want to discuss property management solutions, or just want to say hello, feel free to reach out using the form below or contact me directly.
     </p>
     <p>
-      My journey on this island began unexpectedly, but over the past two years, property management has become my passion. With experience as a director and investor in a local construction company, I've built a strong network of contractors and technicians, enabling me to swiftly handle any issues that may arise.
+      Phone: <a href="tel:+66918838644">+66 91 883 8644</a><br>
+      Email: <a href="mailto:danielalejandromacri@gmail.com">danielalejandromacri@gmail.com</a>
     </p>
-    <p>
-      <strong>My Goal: Providing Peace of Mind</strong><br>
-      Whether you're renting out your property or simply need someone to look after it, you can trust that it's in capable hands. Leveraging my background in photography and videography, I offer marketing services that make a significant difference when promoting your property.
-    </p>
-    <p>
-      Trust is at the heart of what I do. If you're seeking someone reliable to manage your property and provide peace of mind, feel free to reach out. I'd be happy to help.
-    </p>
-  </div>
+
+    <!-- Contact Form -->
+    <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <!-- Hidden input for Netlify bot detection -->
+      <input type="hidden" name="form-name" value="contact">
+      <p style="display:none;">
+        <label>Don’t fill this out if you're human: <input name="bot-field"></label>
+      </p>
+
+      <label for="name">Name *</label>
+      <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+      <label for="phone">Phone Number *</label>
+      <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
+
+      <label for="email">Email *</label>
+      <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+      <label for="country">Country *</label>
+      <select id="country" name="country" required>
+        <option value="">Select Your Country</option>
+        <!-- Add country options -->
+        <option value="Argentina">Argentina</option>
+        <option value="Thailand">Thailand</option>
+        <option value="United States">United States</option>
+        <!-- Add more countries as needed -->
+      </select>
+
+      <label for="message">Write Your Question *</label>
+      <textarea id="message" name="message" rows="6" placeholder="Your Message" required></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+  </section>
 
   <!-- Footer -->
   <footer>
-    <p>Contact me at: <a href="tel:+66918838644" style="color:#fff;">+66 91 883 8644</a></p>
-    <p>Email: <a href="mailto:your-email@example.com" style="color:#fff;">your-email@example.com</a></p>
+    <p>© 2023 Daniel Macri Property Management</p>
   </footer>
+
+  <!-- JavaScript for Menu Toggle -->
+  <script>
+    function toggleMenu() {
+      const navMenu = document.getElementById('nav-menu');
+      navMenu.classList.toggle('show');
+    }
+  </script>
 
 </body>
 </html>
+
