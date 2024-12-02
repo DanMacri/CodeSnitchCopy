@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact - Daniel Macri Property Management</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Link to your CSS file if you have one -->
+  <!-- <link rel="stylesheet" href="styles.css"> -->
+  <style>
+    /* CSS Styles */
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+      color: #333;
+    }
+
+    /* Header */
+    header {
+      background-color: #d1a579;
+      color: #fff;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 48px;
+    }
+
+    header p {
+      font-size: 24px;
+      margin-top: 10px;
+    }
+
+    /* Navigation */
+    nav {
+      background-color: rgba(96, 122, 72, 0.9); /* Light green with transparency */
+      overflow: hidden;
+    }
+
+    nav a {
+      float: left;
+      display: block;
+      color: #fff;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    nav a:hover {
+      background-color: #d1a579;
+      color: #fff;
+    }
+
+    /* Active Link */
+    nav a.active {
+      background-color: #d1a579;
+      color: #fff;
+    }
+
+    /* Main Content */
+    .content {
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .content h2 {
+      font-size: 32px;
+      color: #607a48;
+    }
+
+    .content p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    /* Contact Form */
+    .contact-form {
+      margin-top: 30px;
+    }
+
+    .contact-form label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .contact-form button {
+      background-color: #607a48;
+      color: #fff;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    .contact-form button:hover {
+      background-color: #4e6139;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #d1a579;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+    }
+
+    footer p {
+      margin: 5px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 36px;
+      }
+
+      header p {
+        font-size: 20px;
+      }
+
+      nav a {
+        float: none;
+        width: 100%;
+        text-align: left;
+        padding-left: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Contact Me</h1>
+    <p>Get in Touch</p>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="technical.html">Our Systems</a>
+    <a href="contact.html" class="active">Contact</a>
+    <a href="booking.html">Booking</a>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="content">
+    <h2>I'd Love to Hear from You</h2>
+    <p>
+      Whether you have questions about my services, want to discuss property management solutions, or just want to say hello, feel free to reach out using the form below.
+    </p>
+
+    <!-- Contact Form -->
+    <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <!-- Hidden input for Netlify bot detection -->
+      <input type="hidden" name="form-name" value="contact">
+      <p style="display:none;">
+        <label>Don’t fill this out if you're human: <input name="bot-field"></label>
+      </p>
+
+      <label for="name">Name *</label>
+      <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+      <label for="phone">Phone Number *</label>
+      <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
+
+      <label for="email">Email *</label>
+      <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+      <label for="country">Country *</label>
+      <select id="country" name="country" required>
+        <option value="">Select Your Country</option>
+        <!-- Add country options -->
+        <option value="Argentina">Argentina</option>
+        <option value="Thailand">Thailand</option>
+        <option value="United States">United States</option>
+        <!-- Add more countries as needed -->
+      </select>
+
+      <label for="message">Write Your Question *</label>
+      <textarea id="message" name="message" rows="6" placeholder="Your Message" required></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>Contact me at: <a href="tel:+66918838644" style="color:#fff;">+66 91 883 8644</a></p>
+    <p>Email: <a href="mailto:danielalejandromacri@gmail.com" style="color:#fff;">danielalejandromacri@gmail.com</a></p>
+  </footer>
+
+</body>
+</html>
